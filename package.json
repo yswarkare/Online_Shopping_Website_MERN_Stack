@@ -1,0 +1,23 @@
+{
+  "name": "Online_Shopping_Site",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js --prefix server",
+    "dev": "\"cd server && nodemon app.js\"",
+    "client-install": "npm install --prefix client",
+    "server-install": "npm install --prefix server",
+    "dev2": "concurrently \"cd client && npm run start\" \"npm run dev\"",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"
+  },
+  "proxy": "http://localhost:5000",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^5.2.0",
+    "nodemon": "^2.0.4"
+  }
+}
